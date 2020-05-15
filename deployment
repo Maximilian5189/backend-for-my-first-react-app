@@ -1,0 +1,5 @@
+aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin 431630935515.dkr.ecr.eu-central-1.amazonaws.com
+docker build -t backend .
+docker tag backend:latest 431630935515.dkr.ecr.eu-central-1.amazonaws.com/backend:latest
+docker push 431630935515.dkr.ecr.eu-central-1.amazonaws.com/backend:latest
+aws ecs update-service --force-new-deployment --service custom-service
