@@ -2,7 +2,7 @@ const https = require('https');
 const app = require('./app');
 const fs = require('fs');
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8000;
 
 const options = {
     key: fs.readFileSync('/etc/letsencrypt/live/mybackend.hopto.org/privkey.pem'),
