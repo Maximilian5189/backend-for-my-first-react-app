@@ -25,15 +25,15 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Methods', '*');
   }
   next();
-  // res.header('Content-Type', 'application/json');
-  // res.header('vary', 'origin,access-control-request-method,access-control-request-headers');
 });
 
 const userRoutes = require('./api/routes/user');
 const dataRoutes = require('./api/routes/data');
+const ticketRoutes = require('./api/routes/ticket');
 
 app.use('/user', userRoutes);
 app.use('/data', dataRoutes);
+app.use('/ticket', ticketRoutes);
 
 app.use((req, res, next) => {
   const error = new Error('not found');

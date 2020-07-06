@@ -8,7 +8,6 @@ const limiter = require('../middleware/limiter')
 
 router.get('/', limiter, checkAuth, userControllers.getUser);
 
-// https://github.com/goldbergyoni/nodebestpractices/blob/master/sections/security/login-rate-limit.md
 router.post('/login', limiter, userControllers.userLogin);
 
 router.patch('/', limiter, checkAuth, userControllers.updateUser);
