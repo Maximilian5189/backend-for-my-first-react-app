@@ -17,6 +17,7 @@ const jwt = require('jsonwebtoken');
               _id: userData._id,
               username: userData.username,
               data: userData.data,
+              email: userData.email,
               request: {
                 type: 'GET',
                 url: 'http://localhost:2000/user/' + userData.username
@@ -27,8 +28,8 @@ const jwt = require('jsonwebtoken');
     }
 
 exports.getUser = (req, res) => {
-    User.findOne({username: req.decoded.user})
-    .select('_id username data')
+    User.findOne({username: 'test'})
+    .select('_id username data email')
     .then(user => {
       res.json(prepareResponse(user));
     })
