@@ -29,6 +29,6 @@ The route testing is described  in the following.
 
 # Patch Routes:
 
-* /user
+* /user (Auth needed)
 
 `data: [ { id: string, identifier: string } ], password: string, email: string`
