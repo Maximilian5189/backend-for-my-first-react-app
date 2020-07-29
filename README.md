@@ -15,8 +15,8 @@ The route testing is described  in the following.
 # Configure the app
 To test locally, a .env file has to be added in the main folder:
 
-`DB_CONNECTION=<ADD CONNECTIONSTRING>
-JWT_KEY=<ADD JWT KEY>`
+`DB_CONNECTION=<ADD CONNECTIONSTRING>`
+`JWT_KEY=<ADD JWT KEY>`
 
 ## Connect to MongoDB
 The app will only work, if connected to a database. For that purpose, add a connection string to a .env file in the main folder (Get a mongo DB connection string: https://mongoosejs.com/docs/connections.html)
