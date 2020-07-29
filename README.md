@@ -16,6 +16,7 @@ The route testing is described  in the following.
 To test locally, a .env file has to be added in the main folder:
 
 `DB_CONNECTION=<ADD CONNECTIONSTRING>`
+
 `JWT_KEY=<ADD JWT KEY>`
 
 ## Connect to MongoDB
