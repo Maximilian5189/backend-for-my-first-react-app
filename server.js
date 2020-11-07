@@ -6,13 +6,15 @@ const fs = require('fs');
 const port = process.env.PORT || 8000;
 
 let server;
-let options = {};
+
 if(process.env.NODE_ENV === 'production') {
-  options = {
+  const options = {
     key: fs.readFileSync('/etc/letsencrypt/live/mybackend.hopto.org/privkey.pem'),
     cert: fs.readFileSync('/etc/letsencrypt/live/mybackend.hopto.org/fullchain.pem')
   };
+  server = https.createServer(options, app);
+} else {
+  server = http.createServer(app);
 }
 
-server = http.createServer(app);
 server.listen(port);
