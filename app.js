@@ -5,7 +5,7 @@ const morgan = require('morgan');
 require('dotenv').config()
 
 mongoose.connect(process.env.DB_CONNECTION,
-  { useNewUrlParser: true, useUnifiedTopology: true, connectTimeoutMS: 100000 })
+  { useNewUrlParser: true, useUnifiedTopology: true, serverSelectionTimeoutMS: 500000 })
   .catch(error => { throw new Error (`${error}, ${process.env.DB_CONNECTION}`)});
 
 mongoose.connection.on('error', err => {
