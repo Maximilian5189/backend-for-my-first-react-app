@@ -6,27 +6,6 @@ const limiter = require('../middleware/limiter');
 
 router.get('/', limiter, dataControllers.getData);
 
-// router.post('/', checkAuth, (req, res) => {
-//     data = new Data({
-//         identifier: req.body.Identifier
-//     })
-//     // Data nur zu vorhandenem User hinzufügen
-//     User.findOne({username: req.decoded.user})
-//     .then(user => {
-//         if (user) {
-//             return data.save()
-//         }
-//     })
-//     .then(response => {
-//         if (response) {
-//             res.json({response, success: true})
-//         } else {
-//             res.json({success: false})
-//         }
-//     })
-//     .catch(err => {
-//         res.json({error: err})
-//     })
-// })
+router.post('/', checkAuth, dataControllers.postData)
 
 module.exports = router;
