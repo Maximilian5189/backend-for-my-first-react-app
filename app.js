@@ -6,10 +6,10 @@ require('dotenv').config()
 
 mongoose.connect(process.env.DB_CONNECTION,
   { useNewUrlParser: true, useUnifiedTopology: true })
-  .catch(error => { throw new Error (error)});
+  .catch(error => { throw new Error (`${error}, ${process.env.DB_CONNECTION}`)});
   
 mongoose.connection.on('error', err => {
-  throw new Error (err)
+  throw new Error (`${err}, ${process.env.DB_CONNECTION}`);
 });
 
 app.use(morgan('dev'));
