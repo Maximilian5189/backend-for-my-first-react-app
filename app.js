@@ -2,14 +2,14 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const morgan = require('morgan');
-require('dotenv').config()
+
 
 mongoose.connect(process.env.DB_CONNECTION,
   { useNewUrlParser: true, useUnifiedTopology: true })
-  .catch(error => console.log(error));
+  .catch(error => { throw new Error (error)});
   
 mongoose.connection.on('error', err => {
-  console.log(err);
+  throw new Error (err)
 });
 
 app.use(morgan('dev'));
