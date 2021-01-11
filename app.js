@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const morgan = require('morgan');
-
+require('dotenv').config()
 
 mongoose.connect(process.env.DB_CONNECTION,
   { useNewUrlParser: true, useUnifiedTopology: true })
