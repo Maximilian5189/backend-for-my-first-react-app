@@ -3,9 +3,10 @@ const http = require('http');
 const app = require('./app');
 const fs = require('fs');
 const Sentry = require("@sentry/node");
+require('dotenv').config()
 
 Sentry.init({
-  dsn: "https://398f14068322415b8e13ff4e7df6f1c0@o503162.ingest.sentry.io/5587861",
+  dsn: process.env.SENTRY,
 });
 
 const port = process.env.PORT || 8000;
