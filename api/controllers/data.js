@@ -1,4 +1,4 @@
-const Data = require('../../data-model');
+const Data = require('../../models/data-model');
 
 exports.getData = (req, res) => {
   Data.find()

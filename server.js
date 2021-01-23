@@ -15,8 +15,8 @@ let server;
 try {
   if(process.env.NODE_ENV === 'production') {
     const options = {
-      key: fs.readFileSync('/etc/letsencrypt/live/mybackend.hopto.org/privkey.pem'),
-      cert: fs.readFileSync('/etc/letsencrypt/live/mybackend.hopto.org/fullchain.pem')
+      key: fs.readFileSync(process.env.SSL_KEY),
+      cert: fs.readFileSync(process.env.SSL_CERT)
     };
     server = https.createServer(options, app);
   } else {

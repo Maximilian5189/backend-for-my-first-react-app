@@ -1,4 +1,4 @@
-const Ticket = require('../../ticket-model');
+const Ticket = require('../../models/ticket-model');
 
 exports.getTicket = (req, res) => {
     Ticket.find()

@@ -14,6 +14,6 @@ router.patch('/', limiter, checkAuth, userControllers.updateUser);
 
 router.post('/add', limiter, upload.single('userImage'), userControllers.addUser);
 
-// router.delete('/', limiter, userControllers.deleteUser);
+// router.delete('/', limiter, checkAuth, userControllers.deleteUser);
 
 module.exports = router;
